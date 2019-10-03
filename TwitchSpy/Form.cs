@@ -30,17 +30,14 @@ namespace TwitchSpy
             GetFollowing();
         }
 
-        private void Timer_TimesUp(object sender, System.Timers.ElapsedEventArgs e)
-        {
-
-        }
-
         public async Task GetFollowing()
         {
+            this.Cursor = Cursors.WaitCursor;
             await GetAllFollows();
             await GetFollowsOnLiveAsync();
             await GetOnLiveUserData();
             UpdateListView();
+            this.Cursor = Cursors.Default;
         }
 
         private void init()
@@ -49,8 +46,6 @@ namespace TwitchSpy
             API.Settings.ClientId = ConfigurationManager.AppSettings["client_id"];
 
             InitialListView();
-
-            timer1.Tick += new EventHandler(timer1_Tick);
         }
 
         private void ResetItems()
@@ -146,12 +141,6 @@ namespace TwitchSpy
         }
 
         private void button1_Click(object sender, System.EventArgs e)
-        {
-            ResetItems();
-            GetFollowing();
-        }
-
-        private void timer1_Tick(object sender, System.EventArgs e)
         {
             ResetItems();
             GetFollowing();
