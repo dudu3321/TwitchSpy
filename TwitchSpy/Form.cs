@@ -46,6 +46,16 @@ namespace TwitchSpy
             API.Settings.ClientId = ConfigurationManager.AppSettings["client_id"];
 
             InitialListView();
+
+            this.timer1.Interval = 20000;
+            this.timer1.Tick += Timer1_Tick;
+            this.timer1.Enabled = true;
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            ResetItems();
+            GetFollowing();
         }
 
         private void ResetItems()
@@ -101,11 +111,10 @@ namespace TwitchSpy
         {
             try
             {
-                var tasks = liveStreams.Select(async f =>
+                foreach (var f in liveStreams)
                 {
                     liveUserData.Add(await API.V5.Users.GetUserByIDAsync(f.UserId));
-                });
-                await Task.WhenAll(tasks);
+                }
             }
             catch (Exception ex)
             {
