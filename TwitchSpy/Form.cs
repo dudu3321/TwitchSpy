@@ -130,11 +130,12 @@ namespace TwitchSpy
             listView1.FullRowSelect = true;
             this.listView1.Columns.Add("ID", 100);
             this.listView1.Columns.Add("Name", 100);
-            this.listView1.Columns.Add("標題",265);
+            this.listView1.Columns.Add("標題",338);
         }
 
         private void UpdateListView()
         {
+            this.label2.Text = DateTime.Now.ToString("hh:mm:ss");
             this.listView1.BeginUpdate();
             this.listView1.Items.Clear();
             foreach (var f in liveUserData)
