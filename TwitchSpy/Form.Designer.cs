@@ -40,9 +40,9 @@
             // 
             // listView1
             // 
-            this.listView1.BackColor = System.Drawing.SystemColors.GrayText;
+            this.listView1.BackColor = System.Drawing.Color.FromArgb(54, 57, 63);
             this.listView1.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.ForeColor = System.Drawing.Color.White;
+            this.listView1.ForeColor = System.Drawing.Color.FromArgb(220, 221, 222);
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(14, 48);
             this.listView1.Name = "listView1";
@@ -83,7 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.Color.FromArgb(54, 57, 63);
             this.ClientSize = new System.Drawing.Size(570, 310);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

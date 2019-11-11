@@ -124,10 +124,10 @@ namespace TwitchSpy
 
         private void InitialListView()
         {
-            listView1.View = View.Details;
-            listView1.GridLines = true;
-            listView1.LabelEdit = false;
-            listView1.FullRowSelect = true;
+            this.listView1.View = View.Details;
+            this.listView1.GridLines = true;
+            this.listView1.LabelEdit = false;
+            this.listView1.FullRowSelect = true;
             this.listView1.Columns.Add("ID", 100);
             this.listView1.Columns.Add("Name", 100);
             this.listView1.Columns.Add("標題",338);
